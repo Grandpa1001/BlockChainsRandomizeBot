@@ -1,7 +1,15 @@
-Telegram bot tutorial BlockChainsRandomize
+## Telegram bot tutorial BlockChainsRandomize
 
 1. Open telegram and find chat BotFather and click start
 2. write /newbot 
 3. write name : BlockChainsRandomize
 4. write name bot : BlockChainsRandomizeBot
 5. U get  HTTP API KEY
+6. Download Python
+7. Get Pip write on terminal : curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py  and python3 get-pip.py
+6. go to https://docs.python-telegram-bot.org/
+7. find install instruction 
+8. write on console : pip install python-telegram-bot --upgrade
+
+
+https://www.youtube.com/watch?v=osokoTcr99k&ab_channel=SyntaxSphere
