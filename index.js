@@ -6,11 +6,31 @@ const fs = require('fs');
 const sharp = require('sharp');
 
 const bot = new Telegraf(process.env.API_KEY);
-
-bot.start((ctx) => ctx.reply('Welcome'))
-bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.on(message('sticker'), (ctx) => ctx.reply('👍'))
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
+
+// Komenda "start"
+bot.start((ctx) => ctx.reply('Witaj! Jestem botem Telegram. Aby uzyskać pomoc, wpisz komendę /help.'));
+
+// Komenda "help"
+bot.help((ctx) => {
+    ctx.reply('Oto lista dostępnych poleceń:\n\n/start - Rozpocznij interakcję z botem\n/help - Wyświetl pomoc\n/end - Zakończ interakcję');
+});
+
+// Komenda "end"
+bot.command('end', (ctx) => ctx.reply('Do widzenia!'));
+
+// Komenda "commands"
+bot.command('commands', (ctx) => {
+    const commands = [
+        '/start - Rozpocznij interakcję z botem',
+        '/help - Wyświetl pomoc',
+        '/end - Zakończ interakcję',
+        '/commands - Wyświetl listę wszystkich poleceń'
+    ];
+    const message = 'Oto lista dostępnych poleceń:\n\n' + commands.join('\n');
+    ctx.reply(message);
+});
 
 // Reakcja na wiadomość zawierającą zdjęcie
 bot.on('photo', async (ctx) => {
