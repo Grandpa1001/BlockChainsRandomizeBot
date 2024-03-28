@@ -7,7 +7,7 @@ const sharp = require('sharp');
 
 const bot = new Telegraf(process.env.API_KEY);
 bot.on(message('sticker'), (ctx) => ctx.reply('👍'))
-bot.hears('hi', (ctx) => ctx.reply('Hey there'))
+bot.hears('hi', (ctx) => ctx.reply('Odpowiedź na przywitanie'))
 
 // Komenda "start"
 bot.start((ctx) => ctx.reply('Witaj! Jestem botem Telegram. Aby uzyskać pomoc, wpisz komendę /help.'));
